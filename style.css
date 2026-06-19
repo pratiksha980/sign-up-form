@@ -1,0 +1,186 @@
+/* ==========================================================================
+   1. GLOBAL RESET & VARIABLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Red-400: hsl(0, 100%, 74%);
+  --Green-400: hsl(154, 59%, 51%);
+  --Purple-700: hsl(248, 32%, 49%);
+  --Purple-350: hsl(246, 25%, 77%);
+  --Gray-900: hsl(249, 10%, 26%);
+  --white: #f7f4f4;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: var(--Red-400);
+}
+
+/* ==========================================================================
+   2. MAJOR LAYOUT CONTAINERS (Mobile-First)
+   ========================================================================== */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  min-height: 100vh;
+  padding: 2.5rem;
+  background-image: url(./images/bg-intro-mobile.png);
+  text-align: center;
+}
+
+.text-container {
+  flex: 1;
+  max-width: 52rem;
+  color: var(--white);
+}
+
+.text-container h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.text-container p {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ==========================================================================
+   3. UI COMPONENTS (Card & Form Wrapper)
+   ========================================================================== */
+.price-info {
+  width: min(100%, 65rem);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--Purple-700);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.price {
+  color: var(--Purple-350);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: min(100%, 65rem);
+  padding: 2.6rem;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. FORM ELEMENTS & INTERACTIVE STATES
+   ========================================================================== */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--Purple-700);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  outline: none;
+  color: var(--Gray-900);
+  font-weight: 500;
+}
+input::placeholder {
+  color: var(--Gray-900);
+  font-weight: 500;
+}
+
+.trial-btn {
+  padding: 1.5rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: var(--Green-400);
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer; /* Added for better UX */
+}
+
+.trial-btn:active {
+  transform: scale(0.95);
+}
+
+.footer-text {
+  color: var(--Gray-900);
+  font-size: 1.1rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.highlighted-text {
+  color: var(--Red-400);
+  font-weight: 600;
+}
+
+/* --- Validation Error States --- */
+.error-icon {
+  display: none;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+.error-text {
+  display: none;
+  color: var(--Red-400);
+  font-size: 1.1rem;
+  font-style: italic;
+  text-align: right;
+  margin-block-start: 0.5rem; /* Cleaned up double duplicate from your code */
+}
+
+.input-group.error .error-icon,
+.input-group.error .error-text {
+  display: block;
+}
+
+.input-group.error input {
+  border: 2px solid var(--Red-400);
+  color: var(--Red-400);
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (Desktop Overrides)
+   ========================================================================== */
+@media (min-width: 37.5rem) {
+  .main-container {
+    flex-direction: row;
+    gap: 10rem;
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+
+  .text-container {
+    text-align: left;
+  }
+}
