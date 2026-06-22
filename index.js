@@ -2,7 +2,7 @@ const firstName = document.querySelector(".first-name");
 const lastName = document.querySelector(".last-name");
 const email = document.querySelector(".email");
 const password = document.querySelector(".password");
-const submitBtn = document.querySelector(".trial-btn");
+
 const form = document.querySelector(".form-container");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -46,6 +46,6 @@ function setSuccessFor(input) {
   const inputGroup = input.parentElement;
   inputGroup.classList.remove("error");
 }
-function isEmail(email) {
-  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+function isEmail(emailStr) {
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailStr);
 }
